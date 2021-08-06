@@ -16,12 +16,13 @@ import com.video.evolution.application.library.models.VideoData;
 import com.video.evolution.application.library.tasks.VideoTask;
 import com.video.evolution.application.player.utils.SplashScreen;
 
-public class StartActivity extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
     private SplashScreen mSplashScreen;
     private View mSplash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme_NoActionBar);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evolution);
 
@@ -46,15 +47,18 @@ public class StartActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     // This method will be executed once the timer is over
-                    // Start your app main activity
+                    // Start SplashScreen
                     mSplash.setVisibility(View.GONE);
+                    // hide actionbar
                     getSupportActionBar().hide();
+                    // hide navigation bar
+                    getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN);
                     mSplashScreen.setVisibility(View.VISIBLE);
                     mSplashScreen.start();
                     mSplashScreen.setOnSplashScreenListener(new SplashScreen.OnSplashScreenListener(){
                             @Override
                             public void OnStartActivity() {
-                                VideoTask task = new VideoTask(StartActivity.this);
+                                VideoTask task = new VideoTask(SplashActivity.this);
                                 task.setOnVideoTaskListener(new VideoTask.OnVideoTaskListener(){
                                         @Override
                                         public void onPreExecute() {
@@ -62,9 +66,9 @@ public class StartActivity extends AppCompatActivity {
                                         }
                                         @Override
                                         public void onSuccess(ArrayList<VideoData> result) {
-                                            Intent mIntent = new Intent(StartActivity.this, MainActivity.class);
+                                            Intent mIntent = new Intent(SplashActivity.this, MainActivity.class);
                                             startActivity(mIntent);
-                                            mSplashScreen.createShortCut(StartActivity.this, mIntent);
+                                            mSplashScreen.createShortCut(SplashActivity.this, mIntent);
                                         }
 
                                         @Override

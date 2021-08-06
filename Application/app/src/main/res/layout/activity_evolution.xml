@@ -29,7 +29,7 @@
 		android:layout_height="?attr/actionBarSize"
 		app:theme="?attr/actionBarTheme"
 		app:popupTheme="?attr/actionBarPopupTheme"
-		android:background="#FF000000"/>
+		android:background="?attr/colorPrimary"/>
 
 </LinearLayout>
 
