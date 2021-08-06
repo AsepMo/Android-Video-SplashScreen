@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#FFFFFF"
+	android:orientation="vertical">
+
+	<ImageView
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:id="@+id/splash"
+		android:src="@drawable/splash1"
+		android:scaleType="fitEnd"
+		android:layout_weight="1.0"
+		android:visibility="visible"/>
+
+	<com.video.evolution.application.player.utils.SplashScreen
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:id="@+id/icon"
+		android:layout_weight="1.0"
+		android:visibility="gone"/>
+
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		app:theme="?attr/actionBarTheme"
+		app:popupTheme="?attr/actionBarPopupTheme"
+		android:background="#FF000000"/>
+
+</LinearLayout>
+

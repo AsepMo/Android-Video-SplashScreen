@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/expandable_layout"
+	android:layout_gravity="center"
+	android:layout_marginTop="4dp"
+	android:layout_marginBottom="4dp"
+	android:layout_marginLeft="8dp"
+	android:layout_marginRight="8dp"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+
+	<RelativeLayout
+		android:id="@+id/firstLayer"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="#40000000">
+
+		<ImageView
+			android:layout_margin="5dp"
+			android:id="@+id/video_thumbnail"
+			android:layout_width="80dp"
+			android:layout_height="80dp"
+			android:scaleType="fitXY"
+			android:src="@drawable/video_placeholder"/>
+
+		<RelativeLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:layout_toRightOf="@+id/video_thumbnail"
+			android:layout_marginLeft="5dp"
+			android:orientation="vertical"
+			android:layout_centerVertical="true">
+
+			<TextView
+				android:id="@+id/video_title"
+				android:textColor="@android:color/white"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textSize="18sp"
+				android:text="Title"/>
+
+			<TextView
+				android:id="@+id/video_duration"
+				android:layout_below="@+id/video_title"
+				android:layout_marginTop="10dp"
+				android:layout_marginLeft="5dp"
+				android:layout_centerVertical="true"
+				android:textColor="@android:color/white"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Duration"/>
+
+			<TextView
+				android:id="@+id/video_last_modified"
+				android:layout_toRightOf="@+id/video_duration"
+				android:layout_below="@+id/video_title"
+				android:layout_marginTop="10dp"
+				android:layout_marginLeft="5dp"
+				android:layout_centerVertical="true"
+				android:textColor="@android:color/white"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Date"/>
+
+		</RelativeLayout>
+
+	</RelativeLayout>
+
+</LinearLayout>
+

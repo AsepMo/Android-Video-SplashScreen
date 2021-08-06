@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/app_video_box"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@android:color/black">
+
+	<VideoView
+		android:id="@+id/videoview"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"/>
+    
+	<FrameLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:background="@drawable/app_video_center_bg"
+		android:visibility="visible">
+
+		<LinearLayout
+			android:id="@+id/app_video_volume_box"
+			android:layout_width="80dp"
+			android:layout_height="80dp"
+			android:gravity="center"
+			android:orientation="vertical"
+			android:visibility="gone">
+
+			<ImageView
+				android:id="@+id/app_video_volume_icon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:src="@drawable/ic_volume_up_white_36dp"/>
+
+			<TextView
+				android:id="@+id/app_video_volume"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="50%"
+				android:textColor="@android:color/white"
+				android:textSize="18dp"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/app_video_brightness_box"
+			android:layout_width="80dp"
+			android:layout_height="80dp"
+			android:gravity="center"
+			android:orientation="vertical"
+			android:visibility="gone">
+
+			<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:src="@drawable/ic_brightness_6_white_36dp"/>
+
+			<TextView
+				android:id="@+id/app_video_brightness"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/operation_bg"
+				android:paddingTop="8dp"
+				android:text="50%"
+				android:textColor="@android:color/white"
+				android:textSize="16dp"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/app_video_fastForward_box"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="8dp"
+			android:gravity="center"
+			android:orientation="vertical"
+			android:visibility="gone">
+
+			<TextView
+				android:id="@+id/app_video_fastForward"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/operation_bg"
+				android:paddingTop="8dp"
+				android:text="50%"
+				android:textColor="@android:color/white"
+				android:textSize="16dp"/>
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:paddingTop="8dp">
+
+				<TextView
+					android:id="@+id/app_video_fastForward_target"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="50%"
+					android:textColor="@android:color/white"
+					android:textSize="16dp"/>
+
+				<TextView
+					android:id="@+id/app_video_fastForward_all"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="50%"
+					android:textColor="@color/video_player_fastForward_all"
+					android:textSize="16dp"/>
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<RelativeLayout
+			android:id="@+id/app_video_player_control"
+			android:background="@color/video_player_control_background"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_centerInParent="true">
+
+			<include
+				layout="@layout/video_player_control"/>
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:id="@+id/app_video_progress_bar"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_centerInParent="true"
+			android:visibility="gone">
+
+			<include
+				layout="@layout/video_player_progress"/>
+
+		</RelativeLayout>
+
+	</FrameLayout>
+
+	<RelativeLayout
+		android:id="@+id/app_video_bottom_box"
+		android:layout_width="match_parent"
+		android:layout_height="?android:attr/actionBarSize"
+		android:layout_alignParentBottom="true"
+		android:padding="8dp"
+		android:visibility="visible"
+		android:background="@drawable/transparent_to_dark_gradient">
+
+		<TextView
+			android:id="@+id/play_time"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="5dp"
+			android:text="00:00"
+			android:textColor="@android:color/white"
+			android:textSize="12dp"
+			android:layout_alignParentStart="true"/>
+
+		<SeekBar
+			android:id="@+id/seekbar"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="3dp"
+			android:layout_marginRight="3dp"
+			android:maxHeight="4dip"
+			android:minHeight="4dip"
+			android:progressDrawable="@drawable/seekbar_prg"
+			android:thumb="@drawable/seekbar_thumb"
+			android:thumbOffset="0dip"
+			android:layout_toLeftOf="@+id/total_time"
+			android:layout_toRightOf="@+id/play_time"/>
+
+		<TextView
+			android:id="@+id/total_time"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:text="00:00"
+			android:textColor="@android:color/white"
+			android:textSize="12dp"
+			android:layout_alignParentEnd="true"
+			android:layout_marginEnd="5dp"/>
+
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:id="@+id/app_video_top_box"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center_vertical"
+		android:orientation="horizontal"
+		android:background="@drawable/dark_to_transparent_gradient">
+
+		<com.video.evolution.application.player.MenuAction
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:id="@+id/menu_action"/>
+
+	</RelativeLayout>
+
+</RelativeLayout>
+

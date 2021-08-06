@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   
+    <!-- Color For Video Player -->
+    <color name="video_player_control_background">#23000000</color>
+    <color name="video_player_buffed_background">#2582BE</color>
+    <color name="video_player_black">#000000</color>
+    <color name="video_player_black_translucent">#50000000</color>
+    <color name="video_player_black_translucent1">#33000000</color>
+    <color name="video_player_black_translucent2">#64000000</color>
+    <color name="video_player_black_translucent3">#96000000</color>
+    <color name="video_player_transparent">#00000000</color>
+    <color name="video_player_white">#FFFFFFFF</color>
+    <color name="video_player_white_translucent1">#8AFFFFFF</color>
+    <color name="video_player_white_translucent2">#64FFFFFF</color>
+    <color name="video_player_separator">#F5F5F5</color>
+    <color name="video_player_fastForward_all">#E0E0E0</color>
+    
+</resources>
